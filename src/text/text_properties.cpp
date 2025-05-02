@@ -79,6 +79,8 @@ evaluated_text_properties_ptr evaluate_text_properties(text_symbolizer_propertie
       util::apply_visitor(extract_value<value_double>(feature, attrs), text_prop.expressions.grid_cell_width);
     prop->grid_cell_height =
       util::apply_visitor(extract_value<value_double>(feature, attrs), text_prop.expressions.grid_cell_height);
+    prop->lang =
+      util::apply_visitor(extract_value<value_str>(feature, attrs), text_prop.expressions.lang);
     return prop;
 }
 

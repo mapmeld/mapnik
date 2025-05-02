@@ -83,6 +83,7 @@ struct evaluated_text_properties : util::noncopyable
     text_upright_e upright;
     double grid_cell_width;
     double grid_cell_height;
+    std::string lang;
 };
 
 } // namespace detail
@@ -155,7 +156,6 @@ struct MAPNIK_DECL text_layout_properties
     symbolizer_base::value_type jalign;
     symbolizer_base::value_type valign;
     directions_e dir = EXACT_POSITION;
-    std::optional<std::string> lang;
 };
 
 struct text_properties_expressions
@@ -175,6 +175,7 @@ struct text_properties_expressions
     symbolizer_base::value_type upright = enumeration_wrapper(text_upright_enum::UPRIGHT_AUTO);
     symbolizer_base::value_type grid_cell_width = 0.0;
     symbolizer_base::value_type grid_cell_height = 0.0;
+    symbolizer_base::value_type lang;
 };
 
 // Contains all text symbolizer properties which are not directly related to text formatting and layout.
